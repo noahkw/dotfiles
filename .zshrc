@@ -16,22 +16,11 @@ prompt spaceship
 SPACESHIP_VI_MODE_SHOW=false
 
 # keychain
-eval $(keychain --eval --quiet id_ed25519 id_rsa)
+eval $(keychain --eval --quiet id_ed25519 id_rsa id_gitlab_arch)
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/noah/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/noah/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/noah/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/noah/.miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 bindkey "^R" history-incremental-search-backward
 
